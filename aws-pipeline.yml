@@ -41,19 +41,18 @@ Resources:
   CodeBuildSourceCredential:
     Type: 'AWS::CodeBuild::SourceCredential'
     Properties:
-      AuthType: BASIC_AUTH
-      ServerType: BITBUCKET
-      Token: '{{resolve:secretmanager:bitbucket_access_token:BITBUCKET_ACCESS_TOKEN}}'
-      Username: montolentino@clinkitsolutions.com
+      AuthType: PERSONAL_ACCESS_TOKEN
+      ServerType: GITHUB
+      Token: '{{resolve:secretmanager:github_access_token:GITHUB_ACCESS_TOKEN}}'
   CodeBuildProject:
     Type: 'AWS::CodeBuild::Project'
     Properties:
       Name: !Ref 'AWS::StackName'
       ServiceRole: !Ref CodeBuildServiceRole
       Source:
-        Type: BITBUCKET
-        Location: 'https://bitbucket.shijidev.com/scm/infwohgw/wohgateway.git'
-        BuildSpec: buildspec.yaml
+        Type: GITHUB
+        Location: 'https://github.com/montolentino/test.git'
+        BuildSpec: aws-buildspec.yml
         Auth:
           Type: OAUTH
           Resource: !Ref CodeBuildSourceCredential
