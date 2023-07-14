@@ -3,5 +3,7 @@ version: 0.2
 phases:
   build:
     commands:
-      - command
-      - command
+      - echo Enter build phase...
+      - echo Success build phase...
+      - echo Enter test phase...
+      - echo Success test phase

@@ -43,7 +43,7 @@ Resources:
     Properties:
       AuthType: PERSONAL_ACCESS_TOKEN
       ServerType: GITHUB
-      Token: '{{resolve:secretmanager:github_access_token:GITHUB_ACCESS_TOKEN}}'
+      Token: '{{resolve:secretmanager:github_access:GITHUB_ACCESS_TOKEN}}'
   CodeBuildProject:
     Type: 'AWS::CodeBuild::Project'
     Properties:
@@ -58,7 +58,14 @@ Resources:
           Resource: !Ref CodeBuildSourceCredential
       Artifacts:
         Type: NO_ARTIFACTS
+      Triggers:
+        Webhook: true
+        FilterGroups:
+          - - Type: EVENT
+              Pattern: PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED
+            - Type: BASE_REF
+              Pattern: !Sub ^refs/heads/main$
       Environment:
         Type: WINDOWS_SERVER_2019_CONTAINER
-        ComputeType: BUILD_GENERAL1_SMALL
+        ComputeType: BUILD_GENERAL1_MEDIUM
         Image: 'aws/codebuild/windows-base:2019-2.0'
