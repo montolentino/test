@@ -1,0 +1,7 @@
+D:\Repos\TestCodePipeline\TestCodePipeline\bin\Debug\netcoreapp3.1\publish\TestCodePipeline.exe
+D:\Repos\TestCodePipeline\TestCodePipeline\bin\Debug\netcoreapp3.1\publish\appsettings.Development.json
+D:\Repos\TestCodePipeline\TestCodePipeline\bin\Debug\netcoreapp3.1\publish\appsettings.json
+D:\Repos\TestCodePipeline\TestCodePipeline\bin\Debug\netcoreapp3.1\publish\TestCodePipeline.dll
+D:\Repos\TestCodePipeline\TestCodePipeline\bin\Debug\netcoreapp3.1\publish\TestCodePipeline.deps.json
+D:\Repos\TestCodePipeline\TestCodePipeline\bin\Debug\netcoreapp3.1\publish\TestCodePipeline.runtimeconfig.json
+D:\Repos\TestCodePipeline\TestCodePipeline\bin\Debug\netcoreapp3.1\publish\TestCodePipeline.pdb
